@@ -1,0 +1,1704 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "Basic overview of host metrics and mirth metrics",
+  "editable": true,
+  "gnetId": 10171,
+  "graphTooltip": 1,
+  "id": 37,
+  "iteration": 1594627543972,
+  "links": [],
+  "panels": [
+    {
+      "$$hashKey": "object:1811",
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "left"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Last Refresh Time:"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": 1273
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 23763572060,
+      "options": {
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "7.0.4",
+      "targets": [
+        {
+          "$$hashKey": "object:1842",
+          "expr": "prometheus_config_last_reload_success_timestamp_seconds",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Value": true,
+              "__name__": true,
+              "instance": true,
+              "job": true
+            },
+            "indexByName": {},
+            "renameByName": {
+              "Time": "Last Refresh Time:"
+            }
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "table"
+    },
+    {
+      "$$hashKey": "object:1812",
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "grey",
+                "value": null
+              },
+              {
+                "color": "grey",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 4,
+        "x": 0,
+        "y": 2
+      },
+      "id": 23763572000,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "pluginVersion": "7.0.4",
+      "targets": [
+        {
+          "$$hashKey": "object:1844",
+          "expr": "count((up{job=\"mirth\"}))",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Total Mirth Instances",
+      "type": "stat"
+    },
+    {
+      "$$hashKey": "object:1813",
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": null
+          },
+          "mappings": [],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "grey",
+                "value": null
+              },
+              {
+                "color": "light-red",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 4,
+        "x": 4,
+        "y": 2
+      },
+      "id": 23763572032,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "pluginVersion": "7.0.4",
+      "targets": [
+        {
+          "$$hashKey": "object:1847",
+          "expr": "count((up{job=\"mirth\"})==0)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Inactive Instances",
+      "type": "stat"
+    },
+    {
+      "$$hashKey": "object:1814",
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "grey",
+                "value": null
+              },
+              {
+                "color": "grey",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 4,
+        "x": 8,
+        "y": 2
+      },
+      "id": 23763572008,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "pluginVersion": "7.0.4",
+      "targets": [
+        {
+          "$$hashKey": "object:1850",
+          "expr": "sum by (time) (mirth_channels_deployed)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Total Channels",
+      "type": "stat"
+    },
+    {
+      "$$hashKey": "object:1815",
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "grey",
+                "value": null
+              },
+              {
+                "color": "grey",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 4,
+        "x": 12,
+        "y": 2
+      },
+      "id": 23763572004,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "pluginVersion": "7.0.4",
+      "targets": [
+        {
+          "$$hashKey": "object:1853",
+          "expr": "sum by (time) (mirth_messages_received_total)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Received Messages",
+      "type": "stat"
+    },
+    {
+      "$$hashKey": "object:1816",
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "grey",
+                "value": null
+              },
+              {
+                "color": "light-red",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 4,
+        "x": 16,
+        "y": 2
+      },
+      "id": 23763572049,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "pluginVersion": "7.0.4",
+      "targets": [
+        {
+          "$$hashKey": "object:1856",
+          "expr": "sum by (time) (mirth_messages_errored_total)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Errored Messages",
+      "type": "stat"
+    },
+    {
+      "$$hashKey": "object:1817",
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "grey",
+                "value": null
+              },
+              {
+                "color": "light-red",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 4,
+        "x": 20,
+        "y": 2
+      },
+      "id": 23763572050,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "pluginVersion": "7.0.4",
+      "targets": [
+        {
+          "$$hashKey": "object:1859",
+          "expr": "sum by (time) (mirth_messages_queued)",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Queued Messages",
+      "type": "stat"
+    },
+    {
+      "$$hashKey": "object:1818",
+      "cacheTimeout": null,
+      "datasource": "Prometheus",
+      "description": "Shows top 5 instances with maximum CPU utilization",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "center",
+            "displayMode": "gradient-gauge"
+          },
+          "decimals": 2,
+          "displayName": "CPU Load",
+          "mappings": [
+            {
+              "from": "",
+              "id": 0,
+              "operator": "",
+              "text": "",
+              "to": "",
+              "type": 1,
+              "value": ""
+            }
+          ],
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "rgb(55, 136, 229)",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Server"
+            },
+            "properties": [
+              {
+                "id": "custom.displayMode",
+                "value": "color-text"
+              },
+              {
+                "id": "displayName",
+                "value": "Instance"
+              },
+              {
+                "id": "custom.width",
+                "value": 120
+              },
+              {
+                "id": "links",
+                "value": [
+                  {
+                    "targetBlank": true,
+                    "title": "Details",
+                    "url": "http://localhost:3000/d/gLISNdMGk/cpu-details?orgId=1&refresh=10s"
+                  }
+                ]
+              },
+              {
+                "id": "mappings",
+                "value": [
+                  {
+                    "from": "",
+                    "id": 0,
+                    "operator": "",
+                    "text": "10.12.12.1",
+                    "to": "",
+                    "type": 1,
+                    "value": ""
+                  },
+                  {
+                    "from": "",
+                    "id": 1,
+                    "operator": "",
+                    "text": "10.12.28.45",
+                    "to": "",
+                    "type": 1,
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 0,
+        "y": 4
+      },
+      "id": 23763572061,
+      "links": [],
+      "options": {
+        "frameIndex": 0,
+        "showHeader": true
+      },
+      "pluginVersion": "7.0.4",
+      "repeatDirection": "v",
+      "targets": [
+        {
+          "$$hashKey": "object:1862",
+          "expr": "topk(5,sort_desc(avg by (instance) ((1 - (irate(windows_cpu_time_total{instance=~\"$host\",mode=\"idle\"}[1m])) > 0)*100)))",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Top 5 CPU Usages",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Memory Load": true,
+              "Time": true,
+              "Value #B": true,
+              "Value #C": true,
+              "job": true
+            },
+            "indexByName": {
+              "Time": 0,
+              "Value #A": 2,
+              "Value #B": 3,
+              "Value #C": 4,
+              "instance": 1,
+              "job": 5
+            },
+            "renameByName": {
+              "Value #A": "CPU Load",
+              "Value #B": "Memory Load",
+              "Value #C": "Disk Use",
+              "instance": "Server"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "$$hashKey": "object:1819",
+      "cacheTimeout": null,
+      "datasource": "Prometheus",
+      "description": "Shows top 5 instances with maximum memory utilization",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "center",
+            "displayMode": "gradient-gauge"
+          },
+          "decimals": 2,
+          "displayName": "Memory Load",
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "rgb(55, 136, 229)",
+                "value": null
+              },
+              {
+                "color": "light-red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Server"
+            },
+            "properties": [
+              {
+                "id": "custom.displayMode",
+                "value": "color-text"
+              },
+              {
+                "id": "displayName",
+                "value": "Instance"
+              },
+              {
+                "id": "custom.width",
+                "value": 150
+              },
+              {
+                "id": "links",
+                "value": [
+                  {
+                    "targetBlank": true,
+                    "title": "Details",
+                    "url": "http://localhost:3000/d/1-JkDdMMk/memory-details?orgId=1&refresh=10s"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 8,
+        "y": 4
+      },
+      "id": 23763572054,
+      "links": [],
+      "options": {
+        "frameIndex": 0,
+        "showHeader": true
+      },
+      "pluginVersion": "7.0.4",
+      "repeatDirection": "v",
+      "targets": [
+        {
+          "$$hashKey": "object:1865",
+          "expr": "topk(5,sort_desc(avg by (instance) ((1 - (windows_os_physical_memory_free_bytes{instance=~\"$host\"} / windows_cs_physical_memory_bytes{instance=~\"$host\"}) > 0)*100)))",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Top 5 Memory Usages",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Memory Load": true,
+              "Time": true,
+              "Value #B": true,
+              "Value #C": true,
+              "job": true
+            },
+            "indexByName": {
+              "Time": 0,
+              "Value #A": 2,
+              "Value #B": 3,
+              "Value #C": 4,
+              "instance": 1,
+              "job": 5
+            },
+            "renameByName": {
+              "Value #A": "CPU Load",
+              "Value #B": "Memory Load",
+              "Value #C": "Disk Use",
+              "instance": "Server"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "$$hashKey": "object:1820",
+      "cacheTimeout": null,
+      "datasource": "Prometheus",
+      "description": "Shows top 5 instances with maximum DIsk utilization",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": "center",
+            "displayMode": "gradient-gauge"
+          },
+          "decimals": 2,
+          "displayName": "Disk Load",
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "noValue": "0",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "rgb(55, 136, 229)",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Server"
+            },
+            "properties": [
+              {
+                "id": "custom.displayMode",
+                "value": "color-text"
+              },
+              {
+                "id": "displayName",
+                "value": "Instance"
+              },
+              {
+                "id": "custom.width",
+                "value": 150
+              },
+              {
+                "id": "links",
+                "value": [
+                  {
+                    "targetBlank": true,
+                    "title": "Details",
+                    "url": "http://localhost:3000/d/fs2HDdMGk/disk-details?orgId=1&refresh=10s"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Instance"
+            },
+            "properties": [
+              {
+                "id": "custom.width",
+                "value": null
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 16,
+        "y": 4
+      },
+      "id": 23763572055,
+      "links": [],
+      "options": {
+        "frameIndex": 0,
+        "showHeader": true,
+        "sortBy": []
+      },
+      "pluginVersion": "7.0.4",
+      "repeatDirection": "v",
+      "targets": [
+        {
+          "$$hashKey": "object:1868",
+          "expr": "topk(5,sort_desc(sum by (instance) (1 - (windows_logical_disk_free_bytes{instance=~\"$host\",volume=~\"^[A-Z]:.*$\"} / windows_logical_disk_size_bytes{instance=~\"$host\",volume=~\"^[A-Z]:.*$\"}) > 0)*100))",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Top 5 Disk Usages",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Memory Load": true,
+              "Time": true,
+              "Value #B": true,
+              "Value #C": true,
+              "job": true
+            },
+            "indexByName": {
+              "Time": 0,
+              "Value #A": 2,
+              "Value #B": 3,
+              "Value #C": 4,
+              "instance": 1,
+              "job": 5
+            },
+            "renameByName": {
+              "Value #A": "CPU Load",
+              "Value #B": "Memory Load",
+              "Value #C": "Disk Use",
+              "instance": "Server"
+            }
+          }
+        }
+      ],
+      "type": "table"
+    },
+    {
+      "$$hashKey": "object:1821",
+      "cacheTimeout": null,
+      "columns": [],
+      "datasource": "Prometheus",
+      "description": "Shows inactive channels which have not  received messages from last 12hrs",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 0,
+        "y": 10
+      },
+      "id": 23763572043,
+      "links": [],
+      "pageSize": null,
+      "pluginVersion": "6.7.3",
+      "repeatDirection": "v",
+      "showHeader": true,
+      "sort": {
+        "col": 0,
+        "desc": false
+      },
+      "styles": [
+        {
+          "$$hashKey": "object:290",
+          "alias": "Instance",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": true,
+          "linkTargetBlank": true,
+          "linkTooltip": "Inactive Channel Details",
+          "linkUrl": "  http://localhost:3000/d/O3aQnPWGk/channel-metrics?orgId=1&refresh=5s",
+          "mappingType": 1,
+          "pattern": "instance",
+          "thresholds": [],
+          "type": "string",
+          "unit": "short",
+          "valueMaps": [
+            {
+              "$$hashKey": "object:3774",
+              "text": "10.12.12.1",
+              "value": "localhost:9140"
+            },
+            {
+              "$$hashKey": "object:3796",
+              "text": "10.12.28.45",
+              "value": "localhost:9142"
+            }
+          ]
+        },
+        {
+          "$$hashKey": "object:380",
+          "alias": "Total Channels",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 0,
+          "mappingType": 1,
+          "pattern": "Value",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
+          "$$hashKey": "object:391",
+          "alias": "Channels",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 0,
+          "mappingType": 1,
+          "pattern": "channel",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "$$hashKey": "object:5343",
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "job",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "expr": "(ceil(avg_over_time(mirth_messages_received_total{job=\"mirth\"}[1m])-avg_over_time(mirth_messages_received_total{job=\"mirth\"}[12h])))<=0",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "B"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Inactive Channels(Last 12hrs)",
+      "transform": "table",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "Value #A": false,
+              "Value #B": false,
+              "Value #C": true
+            },
+            "indexByName": {
+              "Time": 0,
+              "Value #A": 4,
+              "Value #B": 6,
+              "Value #C": 5,
+              "Value #D": 3,
+              "channel": 2,
+              "instance": 1
+            },
+            "renameByName": {
+              "No. of Errored Channels": "No. of Channels",
+              "Value": "No. of Channels",
+              "Value #A": "Down Channels",
+              "Value #B": "Total Channels",
+              "instance": ""
+            }
+          }
+        }
+      ],
+      "type": "table-old"
+    },
+    {
+      "$$hashKey": "object:1822",
+      "cacheTimeout": null,
+      "columns": [],
+      "datasource": "Prometheus",
+      "description": "Shows top 5 channels with errored messages received in last 1hr",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 8,
+        "y": 10
+      },
+      "id": 23763572062,
+      "links": [],
+      "pageSize": null,
+      "pluginVersion": "6.7.3",
+      "repeatDirection": "v",
+      "showHeader": true,
+      "sort": {
+        "col": null,
+        "desc": false
+      },
+      "styles": [
+        {
+          "$$hashKey": "object:458",
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "job",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
+          "$$hashKey": "object:459",
+          "alias": "Instance",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": true,
+          "linkTargetBlank": true,
+          "linkTooltip": "Errored Channel Details",
+          "linkUrl": "http://localhost:3000/d/04nBGEWGz/errored-channels?orgId=1&refresh=5s",
+          "mappingType": 1,
+          "pattern": "instance",
+          "thresholds": [],
+          "type": "string",
+          "unit": "short",
+          "valueMaps": [
+            {
+              "$$hashKey": "object:501",
+              "text": "10.12.12.1",
+              "value": "localhost:9140"
+            },
+            {
+              "$$hashKey": "object:502",
+              "text": "10.12.28.45",
+              "value": "localhost:9142"
+            }
+          ]
+        },
+        {
+          "$$hashKey": "object:460",
+          "alias": "Channels",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "channel",
+          "thresholds": [],
+          "type": "string",
+          "unit": "short"
+        },
+        {
+          "$$hashKey": "object:461",
+          "alias": "Messages",
+          "align": "",
+          "colorMode": null,
+          "colors": [
+            "#F2495C",
+            "#F2495C",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 0,
+          "mappingType": 1,
+          "pattern": "Value",
+          "thresholds": [
+            "1"
+          ],
+          "type": "number",
+          "unit": "none"
+        }
+      ],
+      "targets": [
+        {
+          "$$hashKey": "object:1874",
+          "expr": "sort_desc(topk(5,(mirth_messages_errored_total-mirth_messages_errored_total offset 1h)>0))",
+          "format": "table",
+          "hide": false,
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "B"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Top 5 Errored Channels(Last $interval)",
+      "transform": "table",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "Value #A": true,
+              "Value #B": false,
+              "Value #C": true
+            },
+            "indexByName": {
+              "Time": 0,
+              "Value #A": 4,
+              "Value #B": 6,
+              "Value #C": 5,
+              "Value #D": 3,
+              "channel": 2,
+              "instance": 1
+            },
+            "renameByName": {}
+          }
+        }
+      ],
+      "type": "table-old"
+    },
+    {
+      "$$hashKey": "object:1823",
+      "cacheTimeout": null,
+      "columns": [],
+      "datasource": "Prometheus",
+      "description": "Shows top 5 channels with queued messages and channels with sent messages threshold drop(60%)",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 6,
+        "w": 8,
+        "x": 16,
+        "y": 10
+      },
+      "id": 23763572059,
+      "links": [],
+      "pageSize": null,
+      "pluginVersion": "6.7.3",
+      "repeatDirection": "v",
+      "showHeader": true,
+      "sort": {
+        "col": null,
+        "desc": false
+      },
+      "styles": [
+        {
+          "$$hashKey": "object:458",
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "job",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
+          "$$hashKey": "object:459",
+          "alias": "Instance",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": true,
+          "linkTargetBlank": true,
+          "linkTooltip": "Queued Channel Details",
+          "linkUrl": "http://localhost:3000/d/X7VpnEWGz/queued-channels?orgId=1&refresh=5s",
+          "mappingType": 1,
+          "pattern": "instance",
+          "thresholds": [],
+          "type": "string",
+          "unit": "short",
+          "valueMaps": [
+            {
+              "$$hashKey": "object:501",
+              "text": "10.12.12.1",
+              "value": "localhost:9140"
+            },
+            {
+              "$$hashKey": "object:502",
+              "text": "10.12.28.45",
+              "value": "localhost:9142"
+            }
+          ]
+        },
+        {
+          "$$hashKey": "object:460",
+          "alias": "Channels",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "channel",
+          "thresholds": [],
+          "type": "string",
+          "unit": "short"
+        },
+        {
+          "$$hashKey": "object:461",
+          "alias": "Messages",
+          "align": "",
+          "colorMode": null,
+          "colors": [
+            "#F2495C",
+            "#F2495C",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 0,
+          "mappingType": 1,
+          "pattern": "Value",
+          "thresholds": [
+            "1"
+          ],
+          "type": "number",
+          "unit": "short"
+        },
+        {
+          "$$hashKey": "object:1204",
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "__name__",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
+          "$$hashKey": "object:1231",
+          "alias": "",
+          "align": "auto",
+          "colorMode": null,
+          "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+          ],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "mappingType": 1,
+          "pattern": "Value #D",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "$$hashKey": "object:1878",
+          "expr": "sort_desc(topk(5,(mirth_messages_queued>0) or ((mirth_messages_queued>0) and (((((mirth_messages_sent_total - mirth_messages_sent_total offset 12h)/(12*60))*0.6)-((mirth_messages_sent_total - mirth_messages_sent_total offset 15m)/(15)))>0))))  ",
+          "format": "table",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "D"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Top 5 Queued Channels",
+      "transform": "table",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "Time": true,
+              "Value #A": true,
+              "Value #B": false,
+              "Value #C": true
+            },
+            "indexByName": {
+              "Time": 0,
+              "Value #A": 4,
+              "Value #B": 6,
+              "Value #C": 5,
+              "Value #D": 3,
+              "channel": 2,
+              "instance": 1
+            },
+            "renameByName": {}
+          }
+        }
+      ],
+      "type": "table-old"
+    },
+    {
+      "$$hashKey": "object:1824",
+      "aliasColors": {},
+      "bars": false,
+      "cacheTimeout": null,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "decimals": 0,
+      "description": "Total messages sent in last 1 minute",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": null
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "light-blue",
+                "value": null
+              },
+              {
+                "color": "light-red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 1,
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 16
+      },
+      "hiddenSeries": false,
+      "id": 23763572017,
+      "interval": "1m",
+      "legend": {
+        "alignAsTable": false,
+        "avg": false,
+        "current": false,
+        "hideEmpty": false,
+        "hideZero": false,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pluginVersion": "7.0.0-beta1",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "repeatDirection": "v",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "$$hashKey": "object:1883",
+          "expr": "sum by (instance) (mirth_messages_sent_total-mirth_messages_sent_total offset 1m)",
+          "format": "time_series",
+          "instant": false,
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Throughput Monitor",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "{instance=\"localhost:9140\"}": false
+            },
+            "indexByName": {},
+            "renameByName": {
+              "{instance=\"localhost:9140\"}": "10.12.12.1",
+              "{instance=\"localhost:9142\"}": "10.12.28.45"
+            }
+          }
+        }
+      ],
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:78449",
+          "format": "short",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:78450",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "refresh": "1m",
+  "schemaVersion": 25,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "selected": true,
+          "text": "localhost:9182 + localhost:9800",
+          "value": [
+            "localhost:9182",
+            "localhost:9800"
+          ]
+        },
+        "datasource": "Prometheus",
+        "definition": "label_values(windows_os_time{job=~\"$job\"},instance)",
+        "hide": 2,
+        "includeAll": false,
+        "label": "Hostname",
+        "multi": true,
+        "name": "host",
+        "options": [],
+        "query": "label_values(windows_os_time{job=~\"$job\"},instance)",
+        "refresh": 1,
+        "regex": "/([^]+)/",
+        "skipUrlSync": false,
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": true,
+          "text": "wmi",
+          "value": [
+            "wmi"
+          ]
+        },
+        "datasource": "Prometheus",
+        "definition": "label_values(windows_os_time, job)",
+        "hide": 2,
+        "includeAll": false,
+        "label": "job",
+        "multi": true,
+        "name": "job",
+        "options": [],
+        "query": "label_values(windows_os_time, job)",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "auto": false,
+        "auto_count": 30,
+        "auto_min": "10s",
+        "current": {
+          "selected": false,
+          "text": "1h",
+          "value": "1h"
+        },
+        "hide": 2,
+        "label": "",
+        "name": "interval",
+        "options": [
+          {
+            "selected": true,
+            "text": "1h",
+            "value": "1h"
+          }
+        ],
+        "query": "1h",
+        "refresh": 2,
+        "skipUrlSync": false,
+        "type": "interval"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": true,
+          "text": "localhost:9182 + localhost:9800",
+          "value": [
+            "localhost:9182",
+            "localhost:9800"
+          ]
+        },
+        "datasource": "Prometheus",
+        "definition": "label_values(instance)",
+        "hide": 2,
+        "includeAll": false,
+        "label": "Instance",
+        "multi": true,
+        "name": "instance",
+        "options": [],
+        "query": "label_values(instance)",
+        "refresh": 1,
+        "regex": "/([^]+)/",
+        "skipUrlSync": false,
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "hidden": true,
+    "refresh_intervals": [
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "",
+  "title": "Mirth Metrics Dashboard",
+  "uid": "4mywzPZGz",
+  "version": 75
+}
